@@ -28,6 +28,12 @@ CHECK_ROOT
 
 for package in $@
 do
-
-echo $package
+dnf list installed $package
+ if [ $? -ne 0 ]
+ then
+   echo "git is not installed .. going to install it"
+    VALIDATE $? "installing git"
+ else
+ echo "git is already installed"
+ fi
 done
