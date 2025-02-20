@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "APLLE" "Grapes" "ORANGE" "KIWI"
+FRUITS=("APLLE" "Grapes" "ORANGE" "KIWI") 
