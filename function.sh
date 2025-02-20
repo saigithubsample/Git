@@ -6,17 +6,22 @@ G="\e[32m"
 N="\e[33m"
 
 VALIDATE(){
-echo "exit status $1"
+if [ $? -ne 0 ]
+then
+ echo "$2 is failed"
+else 
+ echo "$2 is success"
+fi
 }
 
 if [ $Userid -ne 0 ]
 then
- echo  -e "plaes try to access with $R root prevelages "
+ echo  -e "please try to access with $R root prevelages "
  exit 1
 fi
 
  dnf list installed git -y
- VALIDATE $? 
+ VALIDATE $? "listing git" 
 
 #  if [ $? -ne 0 ]
 #  then 
