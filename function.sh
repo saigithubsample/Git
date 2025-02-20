@@ -1,10 +1,13 @@
 #!/bin/bash
 
 Userid=$(id -u)
+R="\e[31m"
+G="\e[32m"
+N="\e[33m"
 
 if [ $Userid -ne 0 ]
 then
- echo "plaes try to access with root prevelages"
+ echo  -e "plaes try to access with  root prevelages $R"
  exit 1
 fi
 
