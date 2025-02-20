@@ -7,7 +7,7 @@ N="\e[33m"
 
 if [ $Userid -ne 0 ]
 then
- echo  -e "plaes try to access with  root prevelages $R"
+ echo  -e "plaes try to access with $R root prevelages "
  exit 1
 fi
 
