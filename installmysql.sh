@@ -12,10 +12,9 @@ dnf list intalled git
 
 
 if[ $? -ne 0 ]
+ then
+   echo "mysql is not installed..... going to install"
 
-then
-echo "mysql is not installed..... going to install"
-
-else
-echo "mysql is already installed ..nothing to do"
+  else
+    echo "mysql is already installed ..nothing to do"
 fi
