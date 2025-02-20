@@ -17,14 +17,14 @@ fi
 CHECK_ROOT
 
 VALIDATE(){
-if [ $? -ne 0 ]
+if [ $1 -ne 0 ]
 then
- echo "$1 is failed"
+ echo "$2 is failed"
 else 
- echo "$1 is success" 
+ echo "$2 is success" 
 fi
 }
 
 dnf list installed git -y
 
-VALIDATE $? "listing git"
+VALIDATE $?  "listing git"
