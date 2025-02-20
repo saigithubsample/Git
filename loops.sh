@@ -32,7 +32,7 @@ do
     if [ $? -ne 0 ]
     then
      echo "$package is not installed .. going to install it"
-     VALIDATE $? "installing git"
+     VALIDATE $? "installing $package"
     else
      echo "$package is already installed"
     fi
