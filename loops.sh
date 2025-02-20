@@ -6,7 +6,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[33m"
 
-cHECK_ROOT(){
+CHECK_ROOT(){
 if [ $Userid -ne 0 ]
 then
  echo "try to access with root prevelages"
