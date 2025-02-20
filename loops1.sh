@@ -7,12 +7,12 @@ G="\e[32m"
 Y="\e[33m"
 
 CHECK_ROOT(){
-if [ $Userid -ne 0 ]
-then
- echo "Please run the script with root previlages"   
- exit 1  
-fi
-}
+     if [ $Userid -ne 0 ]
+     then
+       echo "Please run the script with root previlages"   
+       exit 1  
+     fi
+    }
 
 CHECK_ROOT
 
@@ -25,6 +25,15 @@ else
 fi
 }
 
-dnf list installed git -y
 
-VALIDATE $?  "listing git"
+for pacakage in $@
+do
+dnf list installed $package
+if [ $? -ne 0 ]
+then
+  dnf install $package -y
+  VALIDATE $? "INSTALLING $package"
+else
+ echo " $package is already installe dnothing to do"
+fi
+done
