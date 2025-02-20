@@ -14,13 +14,14 @@ then
 fi
 }
 
+CHECK_ROOT
 
 VALIDATE(){
 if [ $? -ne 0 ]
 then
- echo "command is failed"
+ echo "$1 is failed"
 else 
- echo "command is success" 
+ echo "$1 is success" 
 fi
 }
 
