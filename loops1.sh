@@ -11,8 +11,9 @@ if [ $Userid -ne 0 ]
 then
  echo "Please run the script with root previlages"   
  exit 1  
-}
 fi
+}
+
 
 VALIDATE(){
 if [ $? -ne 0 ]
