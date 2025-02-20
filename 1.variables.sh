@@ -1,5 +1,8 @@
 #!/bin/bash
-echo " Sai: Hi Teja How are you?"
-echo "Teja : Hi Sai.Im gud.How do you do?"
-echo "Sai : Im fine.what are you doing?"
-echo "Teja: currently im learning devops"
+Person1= nani
+Person2=samju
+
+echo "$Person1: Hi $Person2 How are you?"
+echo "$Person2 : Hi $Person1.Im gud.How do you do?"
+echo "$Person1 : Im fine $Person2.what are you doing?"
+echo "$Person2: currently im learning devops $Person1"
