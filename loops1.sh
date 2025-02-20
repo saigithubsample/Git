@@ -28,12 +28,12 @@ fi
 
 for pacakage in $@
 do
-dnf list installed $package
-if [ $? -ne 0 ]
-then
-  dnf install $package -y
-  VALIDATE $? "INSTALLING $package"
-else
- echo " $package is already installe dnothing to do"
-fi
+  dnf list installed $package
+   if [ $? -ne 0 ]
+   then
+    dnf install $package -y
+    VALIDATE $? "INSTALLING $package"
+   else
+     echo " $package is already installed nothing to do"
+   fi
 done
