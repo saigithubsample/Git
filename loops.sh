@@ -21,6 +21,7 @@ VALIDATE(){
   exit 1
  else 
   echo "$2 is success"
+ fi 
 }
 
 CHECK_ROOT
