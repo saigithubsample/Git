@@ -33,6 +33,7 @@ dnf list installed git -y
   echo "mysql is not intalled $R try again"
   else
    echo "mysql installation is $G success"
+  fi 
 
  else 
   echo "mysql is $Galready installed ....$N nothing to do it"
