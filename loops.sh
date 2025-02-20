@@ -34,6 +34,6 @@ dnf list installed $package
    echo "git is not installed .. going to install it"
     VALIDATE $? "installing git"
  else
- echo "git is already installed"
+ echo "$package is already installed"
  fi
 done
