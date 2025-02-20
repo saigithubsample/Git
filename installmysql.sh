@@ -8,9 +8,9 @@
 
 # fi
 
-dnf list intalled git
+dnf list intalled mysql
 if [ $? -ne 0 ]
- then
+  then
    echo "mysql is not installed..... going to install"
 
   else
