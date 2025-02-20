@@ -8,4 +8,13 @@ echo "run the script with root user access"
 
 fi
 
-dnf intall mysql
+dnf list intalled mysql 
+
+if[ $? -ne 0 ]
+
+then
+echo "mysql is not installed..... going to install"
+
+else
+echo "mysql is already installed ..nothing to do"
+fi
