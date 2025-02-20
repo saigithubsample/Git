@@ -30,11 +30,12 @@ dnf list installed git -y
   dnf install mysql -y 
   if [ $? -ne 0 ]
   then 
-  echo "mysql is not intalled $R try again"
+  echo  -e "mysql is not intalled $R try again"
+   exit 1
   else
-   echo "mysql installation is $G success"
+   echo -e  "mysql installation is $G success"
   fi 
 
  else 
-  echo "mysql is $Galready installed ....$N nothing to do it"
+  echo -e "mysql is $G already installed ....$N nothing to do it"
  fi 
