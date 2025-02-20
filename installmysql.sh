@@ -1,14 +1,15 @@
 #!/bin/bash
 
-Userid=$(id -u)
+# Userid=$(id -u)
 
-if [ $Userid -ne 0 ] 
-then
-echo "run the script with root user access"
+# if [ $Userid -ne 0 ] 
+# then
+# echo "run the script with root user access"
 
-fi
+# fi
 
-dnf list intalled mysql 
+dnf list intalled git
+
 
 if[ $? -ne 0 ]
 
