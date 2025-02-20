@@ -11,7 +11,7 @@ then
  exit 1
 fi
 
-dnf list installed git -y
+ dnf list installed git -y
 
  if [ $? -ne 0 ]
  then 
@@ -19,21 +19,21 @@ dnf list installed git -y
   dnf install git -y 
 
  else 
-  echo "$G git is already installed nothing to do it"
+  echo -e "$G git is already installed nothing to do it"
  fi  
 
  dnf list installed mysq -y
 
  if [ $? -ne 0 ]
  then 
-  echo -e "mysql is $R not installed .. $Ggoing to intall"
-  dnf install mysql -y 
+  echo -e "mysql is $R not installed .. $G going to intall"
+   dnf install mysql -y 
   if [ $? -ne 0 ]
   then 
-  echo  -e "mysql is not intalled $R try again"
+   echo  -e "mysql is not intalled $R try again"
    exit 1
   else
-   echo -e  "mysql installation is $G success"
+   echo -e  "$G mysql installation is  success"
   fi 
 
  else 
