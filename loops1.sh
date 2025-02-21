@@ -27,15 +27,15 @@ VALIDATE(){
 }
 CHECK_ROOT
 
-for pacakage in $@
+for package in $@
 do
-  dnf list installed $package
-   if [ $? -ne 0 ]
-   then
-    echo "$package is not installed ..going to install"
-    dnf install $package -y
-    VALIDATE $? "INSTALLING $package"
-   else
-    echo " $package is already installed nothing to do"
-   fi
+ dnf list installed $package
+ if [ $? -ne 0 ]
+ then 
+  echo "$package is not installed.. going to install"
+  dnf install $package -y 
+  VALIDATE $? "Installing $package"
+ else
+  echo "$package is already installed nothing to do"
+ fi  
 done
