@@ -4,7 +4,7 @@ LOGS_FOLDER="/var/log/shell_script"
 SCRIPT_NAME="$(echo $0 | cut -d "." -f1)"
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE=$LOG_FILE/$SCRIPT_NAME/$TIME_STAMP
-mkdir -p $LOG_FOLDER
+mkdir -p $LOGS_FOLDER
 Userid=$(id -u)
 
 R="\e[31m"
