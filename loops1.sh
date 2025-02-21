@@ -10,7 +10,7 @@ CHECK_ROOT(){
 
      if [ $Userid -ne 0 ]
      then
-       echo "Please run the script with root previlages"   
+       echo -e " $R Please run the script with root previlages"   
        exit 1  
      fi
     }
@@ -20,9 +20,9 @@ CHECK_ROOT(){
 VALIDATE(){
  if [ $1 -ne 0 ]
  then
-   echo "$2 is failed"
+   echo -e "$2 $R is failed"
  else 
-   echo "$2 is success" 
+   echo -e "$2 $G is success" 
  fi
 }
 CHECK_ROOT
@@ -32,10 +32,10 @@ do
  dnf list installed $package
  if [ $? -ne 0 ]
  then 
-  echo "$package is not installed.. going to install"
+  echo -e "$R $package is not installed.. $G going to install"
   dnf install $package -y 
   VALIDATE $? "Installing $package"
  else
-  echo "$package is already installed nothing to do"
+  echo -e "$G $package is already installed $Y nothing to do"
  fi  
 done
