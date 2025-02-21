@@ -15,7 +15,7 @@ CHECK_ROOT(){
 
      if [ $Userid -ne 0 ]
      then
-       echo -e " $R Please run the script with root previlages"   &>>$LOG_FILE
+       echo -e " $R Please run the script with root previlages" &>>$LOG_FILE
        exit 1  
      fi
     }
@@ -25,22 +25,22 @@ CHECK_ROOT(){
 VALIDATE(){
  if [ $1 -ne 0 ]
  then
-   echo -e "$2 $R is failed"
+   echo -e "$2 $R is failed" &>>$LOG_FILE
  else 
-   echo -e "$2 $G is success" 
+   echo -e "$2 $G is success" &>>$LOG_FILE
  fi
 }
 CHECK_ROOT
 
 for package in $@
 do
- dnf list installed $package
+ dnf list installed $package &>>$LOG_FILE
  if [ $? -ne 0 ]
  then 
-  echo -e "$R $package is not installed.. $G going to install"
+  echo -e "$R $package is not installed.. $G going to install" &>>$LOG_FILE
   dnf install $package -y 
   VALIDATE $? "Installing $package"
  else
-  echo -e "$G $package is already installed $Y nothing to do"
+  echo -e "$G $package is already installed $Y nothing to do" &>>$LOG_FILE
  fi  
 done
