@@ -7,6 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 
 CHECK_ROOT(){
+
      if [ $Userid -ne 0 ]
      then
        echo "Please run the script with root previlages"   
@@ -14,17 +15,17 @@ CHECK_ROOT(){
      fi
     }
 
-CHECK_ROOT
+
 
 VALIDATE(){
-if [ $1 -ne 0 ]
-then
- echo "$2 is failed"
-else 
- echo "$2 is success" 
-fi
+ if [ $1 -ne 0 ]
+ then
+   echo "$2 is failed"
+ else 
+   echo "$2 is success" 
+ fi
 }
-
+CHECK_ROOT
 
 for pacakage in $@
 do
@@ -35,6 +36,6 @@ do
     dnf install $package -y
     VALIDATE $? "INSTALLING $package"
    else
-     echo " $package is already installed nothing to do"
+    echo " $package is already installed nothing to do"
    fi
 done
